@@ -1,0 +1,13 @@
+prefix=/usr/local
+exec_prefix=/usr/local
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: orcania
+Description: Potluck with different functions for different purposes that can be shared among programs
+URL: https://github.com/babelouest/orcania/issues
+Version: 2.0.1
+Requires: 
+Requires.private: @PKGCONF_REQ_PRIVATE@
+Libs: -L${libdir} -lorcania
+Cflags: -I${includedir}
