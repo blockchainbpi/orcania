@@ -92,7 +92,9 @@ install: all $(PKGCONFIG_FILE)
 	install -m644 $(PKGCONFIG_FILE) $(DESTDIR)/lib/pkgconfig
 	install -m644 ../include/orcania.h $(DESTDIR)/include
 	install -m644 $(CONFIG_FILE) $(DESTDIR)/include
-	-ldconfig
+	ifeq ($(detected_OS),Linux)
+		-ldconfig
+	endif
 
 static-install: static
 	install liborcania.a $(DESTDIR)/lib
